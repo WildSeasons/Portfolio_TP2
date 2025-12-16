@@ -1,0 +1,484 @@
+/* Remise à zéro */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Mettre le scroll-behavior de la page web en smooth */
+html {
+    scroll-behavior: smooth;
+}
+
+body{
+    overflow-x: hidden;
+    font-family: "NotoSans";
+    letter-spacing: 2px;
+}
+
+/* Importer la police NotoSans */
+
+@font-face {
+  font-family: "NotoSans";
+  src: url("../polices/noto_Sans/NotoSans-VariableFont_wdth\,wght.ttf");
+}
+
+/* Propriétés qui s'appliquent au contenant principal */
+#global {
+    margin: 0 auto;
+    font-size: 16px;
+    min-width:  1366px;
+    width: 100vw;
+    max-width: 1920px;
+    color: white;
+    
+}
+/* Propriétés qui s'appliquent à plusieurs éléments HTML en même temps ou à un élément dans tout le document */
+li {
+    list-style: none;
+}
+
+#galerie h2, #qualifications caption:hover, #requetes div h2, #apropos > h2 {
+    font-size: 3rem;
+}
+
+header, header div:first-of-type, header nav ul, #accueil, #accueil ul, #apropos, #apropos article:nth-of-type(2) div, #qualifications, #galerie, #galerie div, #requetes, #requetes form, #requetes fieldset, #contact, #coordonneesCollegeMaisonneuve, #reseauxSociaux, #ressourcesImportantes, #droitsAuteur  {
+    display: flex;
+}
+
+header, #contact{
+    background-color: #5B5F90;
+}
+
+header, header img, header nav ul, header nav li a, #qualifications caption, #coordonneesCollegeMaisonneuve img{
+    height: 100px;
+}
+
+header, header nav ul, #apropos, #apropos article:nth-of-type(2) div, #galerie div, #requetes form, #contact {
+    justify-content: space-around;
+}
+
+header, header div:first-of-type, header nav ul, #qualifications, #galerie, #requetes, #reseauxSociaux, #ressourcesImportantes, #droitsAuteur {
+    align-items: center;
+}
+
+header, #accueil, #apropos, #apropos article:nth-of-type(2) div, #qualifications, #galerie, #requetes, #contact, #apropos > h2, #galerie div, #galerie h2, #ressourcesImportantes h3 {
+    width: 100%;
+}
+
+header img, header nav li, header nav li a, #reseauxSociaux img {
+    display: inline-block;
+}
+
+header div:first-of-type, #galerie, #requetes fieldset {
+    justify-content: flex-start;
+}
+
+header nav li, #contact{
+    font-size: 1.2rem;
+}
+
+header nav li a, #qualifications table tbody td, #reseauxSociaux img:hover, #ressourcesImportantes ul:first-of-type li:first-child:hover ul:first-of-type  {
+    transition: all 0.5s;
+}
+
+header nav li a:hover, #reseauxSociaux img:hover{
+    background-color: #43476B;
+}
+
+#accueil, #accueil ul, #galerie, #requetes fieldset, #coordonneesCollegeMaisonneuve, #ressourcesImportantes, #droitsAuteur  {
+    flex-direction: column;
+}
+
+#accueil, #qualifications {
+    justify-content: center;
+}
+
+#apropos, #galerie div, #requetes form, #requetes fieldset{
+    align-items: flex-start;
+}
+
+#apropos, #galerie div, #contact{
+    flex-wrap: wrap;
+}
+
+#apropos > h2, #qualifications table th, #qualifications table td, #galerie h2, #galerie figure img+figcaption, #galerie figure video+figcaption {
+    text-align: center;
+}
+
+#apropos img, #coordonneesCollegeMaisonneuve img{
+    display: block;
+}
+
+/* Garder la forme du curseur lorsqu'il survole des éléments */
+#qualifications caption:hover, #qualifications table tbody td:hover, #ressourcesImportantes ul:first-of-type li:first-child:hover ul:first-of-type{
+    cursor: pointer;
+}
+
+#apropos img, #requetes fieldset:last-of-type input[type="reset"], #requetes fieldset:last-of-type input[type="submit"]{
+    padding: 10px;
+}
+
+#accueil ul li, #qualifications caption {
+    padding: 20px;
+}
+
+#qualifications table th, #qualifications table td, #contact li {
+    padding: 5px;
+}
+
+#galerie figure img, #galerie figure img+figcaption{
+    width: 300px;
+}
+
+#requetes, #reseauxSociaux {
+    justify-content: space-evenly;
+}
+
+#galerie figure video, #galerie figure video+figcaption{
+    width: 340px;
+}
+
+#coordonneesCollegeMaisonneuve, #ressourcesImportantes {
+    justify-content:flex-start;
+    
+}
+
+/* Enlever la ligne de soulignage des liens par défaut et mettre les lettres en blanc peu importe l'état des liens  */
+a {
+    text-decoration: none;
+    color: white;
+}
+
+/* Propriétés qui s'appliquent à chaque section sauf l'en-tête */
+#accueil, #apropos, #qualifications, #galerie, #requetes, #contact {
+    height: 100vh;
+    min-height: 768px;
+}
+
+/* Section Entête */
+
+/* Mettre le header collé en haut peu importe la navigation et mettre le header en priorité avec z-index pour éviter que le contenu du reste de la page cache le navigation s'il y des transformations qui ont lieu */
+header{
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+header h1{
+    font-size: 1.6rem;
+}
+
+header div:first-of-type {
+    width: 24%;
+}
+
+header nav{
+    width: 65%;
+}
+header nav li{
+    text-transform: uppercase;
+}
+
+header nav li a {
+    padding: 38px 31px;
+}
+
+/* Section « Accueil » */
+
+#accueil {
+    background-image: url("../images/accueil/cielArrierePlan.jpg");
+    background-size:cover;
+}
+
+
+#accueil ul{
+    justify-content:space-between;
+    align-items:center;
+    align-content: space-evenly;
+}
+
+#accueil ul li{
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+
+/* Section « À propos » */
+#apropos{
+    background-color: #BF7A94;
+    color: #040404;
+}
+
+
+#apropos > h2 {
+    padding: 3%;
+    height: 10%;   
+    margin: 0;
+}
+
+#apropos h3 {
+    font-size: 1.8rem;
+    padding-bottom: 3%;
+}
+
+
+#apropos img{
+    padding-top: 2%;
+    width: 450px;
+    border-top-left-radius: 25%;
+    border-top-right-radius: 25%;
+}
+
+#apropos article{
+    width: 30%;
+    padding: 2% 1.5%;
+    height: 85%;
+}
+
+#apropos article p{
+    line-height: 1.8;
+    padding-bottom: 2%;
+}
+
+#apropos article:nth-of-type(2) div img{
+    width: 200px;
+    height: 200px;
+    padding: 20px;
+    border-radius: 100%;
+    transition: all 5s;
+}
+
+/* Mettre les images en rotation si les images sont touchées par la souris */
+#apropos article:nth-of-type(2) div img:hover{
+    transform: rotate(360deg);
+}
+
+
+/* Section « Qualification » */
+
+#qualifications {
+    color: #040404;    
+    background-color: #C1C6D9;    
+}
+
+#qualifications table {
+    width: 1300px;
+    height: 600px;
+    border-collapse: collapse;
+    border: 5px solid #4C5784;
+    background-color: #F5DAE0;
+}
+
+#qualifications caption{
+    font-size: 2rem;
+    transition: all 1s;
+}
+
+#qualifications table th, #qualifications table td {
+    width: 160px;
+}
+
+#qualifications table th, #qualifications table tfoot td {
+    border: 2px solid #4C5784;
+}
+
+#qualifications table tbody td {
+    border: 2px dotted #4C5784;
+}
+
+#qualifications table tbody td:hover {
+    background-color: #C1D9C5 ;
+}
+
+/* Section « Galerie » */
+
+#galerie {
+    background-color: #2F3973;
+}
+
+#galerie div{
+    padding: 0% 2%;
+    height: 70%;
+}
+
+#galerie h2{
+    padding: 1.5% 2.5%;
+}
+
+#galerie figure img{
+    height: 300px;
+    padding: 30px;
+    transition: all 1s;
+}
+
+/* Agrandir les images de la galerie si elles sont touchées par la souris */
+#galerie figure img:hover{
+    transform: scale(1.4);
+}
+
+#galerie figure video{
+    height: 300px;
+}
+
+/* Section « Requêtes » */
+
+#requetes {
+    background-color: #5166A6;
+}
+
+#requetes div {
+    width: 460px;
+    height: 700px;
+    padding-left: 20px;
+    padding-top: 20px;
+}
+
+#requetes legend{
+    font-size: 1.6rem;
+}
+
+#requetes div h2 {
+    padding-bottom: 10px;
+}
+
+#requetes div p {
+    padding-left: 5px;
+    font-size: 1.4rem;
+    line-height: 1.5;
+}
+
+#requetes fieldset{
+    width: 400px;
+    height: 600px;
+    padding: 2%;
+    margin: 1%;
+    transition: all 1s;
+    font-size: 1.1rem;
+}
+
+
+/* Changer les bordures du formulaire si la souris rentre dans la zone du formulaire */
+#requetes fieldset:hover{
+    border-color: #a69151;
+}
+
+#requetes fieldset:first-of-type input, #requetes fieldset:last-of-type input:first-of-type {
+    padding:10px;
+}
+
+#requetes fieldset:last-of-type input[type="reset"], #requetes fieldset:last-of-type input[type="submit"]{
+    margin: 10px 0px;
+    width: 200px;
+}
+
+#requetes fieldset label {
+    padding: 10px 0px;
+}
+
+/* Agrandir la largeur certaines cases de questions pour pouvoir voir le message dans la case et pour uniformiser le tout  */
+#nomVisiteur, #courrielVisiteur, #telephoneVisiteur, #titreObjetMessage {
+    width: 300px;
+}
+
+/* Section « Contact » */
+
+#contact{
+    line-height: 1.2;
+}
+
+#contact h3{
+    font-size: 1.8rem;
+}
+
+/* Propriétés et valeurs communes entre plusieurs sous-sections de la section « Contact » */
+
+#coordonneesCollegeMaisonneuve, #reseauxSociaux, #ressourcesImportantes {
+    width: 30%;
+    height: 70%;
+}
+
+#ressourcesImportantes ul, #coordonneesCollegeMaisonneuve ul {
+    padding-top: 20px;
+    padding-bottom: 15px;
+}
+
+
+/* La sous-section « Coordonnées » */
+
+#coordonneesCollegeMaisonneuve {
+    align-items:flex-start;
+    padding-top: 90px;
+    padding-left: 50px;
+}
+
+#coordonneesCollegeMaisonneuve h3 {
+    padding-right: 70px;
+}
+
+#coordonneesCollegeMaisonneuve img{
+    width: 100px;
+}
+
+/* La sous-section « Réseaux sociaux » */
+
+#reseauxSociaux img {
+    width: 32px;
+    height: 32px;
+}
+
+#reseauxSociaux img:nth-child(2){
+    margin-top: 2px;
+    width: 48px;
+    height: 48px;
+}
+
+
+#reseauxSociaux img:nth-child(3){
+    width: 36px;
+    height: 36px;
+}
+
+
+#reseauxSociaux img:nth-child(4){
+    width: 40px;
+    height: 40px;
+}
+
+#reseauxSociaux img:hover {
+    transform: scale(2);
+}
+
+/* La sous-section « Ressources importantes » */
+#ressourcesImportantes {
+    padding-top: 90px;
+}
+
+
+#ressourcesImportantes ul:first-of-type {
+    padding-right: 10px;
+}
+
+#ressourcesImportantes ul:first-of-type li:first-child ul:first-of-type{
+    opacity: 0;
+    font-size: 0.8rem;
+    transition: all 1s;
+}
+
+/* Rendre visible la bibliographie et animer les sources vers la droite lorsqu'on touche la liste avec la souris */
+#ressourcesImportantes ul:first-of-type li:first-child:hover ul:first-of-type{
+    transform: translateX(25px);
+    opacity: 1;
+}
+
+#ressourcesImportantes span {
+    font-style: italic;
+}
+
+/* La section des droits d'auteur (non-inclus dans le menu de navigation) */
+#droitsAuteur {
+    justify-content:center;
+    width: 40%;
+
+}
+
